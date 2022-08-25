@@ -15,7 +15,6 @@ int main(void)
     calc_collatz(number);
     
     return 0;
-    
 }
 
 int calc_collatz (int n)
@@ -28,26 +27,19 @@ int calc_collatz (int n)
     }
     if (number % 2 == 0)
     {
+        step_counter++;
         number = number / 2;
         if (number == 1)
-        {
             printf("%i ", number);
-            step_counter++;
-        }
         else
-        {
             printf("%i >", number);
-            step_counter++;
-        }
-
     }
     else
     {
-        number = (3*number) + 1;
-        printf("%i >", number);
         step_counter++;
+        number = (number*3) + 1;
+        printf("%i >", number);
     }
     calc_collatz(number);
     return 0;
-    
 }
